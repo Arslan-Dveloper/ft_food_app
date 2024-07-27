@@ -340,7 +340,6 @@ class MainScreenRestaurant extends StatelessWidget {
                         ),
                         itemBuilder: (context, index) {
                           return Container(
-
                             padding: EdgeInsets.only(left: 10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

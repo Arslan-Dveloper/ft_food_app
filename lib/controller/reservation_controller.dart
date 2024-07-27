@@ -14,4 +14,26 @@ class ReservationController extends GetxController {
     10,
   ];
   var selectedItem = 0.obs;
+  var switchValue = true.obs;
+
+  var images = [
+    "assets/images/image no 1.png",
+    "assets/images/image no 2.png",
+    "assets/images/image no 3.png",
+    "assets/images/image no 4.png",
+  ];
+
+  var listTextMain = [
+    "Special Bowl",
+    "Italian Platter",
+    "Vege Salad",
+    "Chinese Bowl",
+  ];
+
+  var listTextSub = [
+    "Special Bowl",
+    "Italian Platter",
+    "Vege Salad",
+    "Chinese Bowl",
+  ];
 }

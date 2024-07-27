@@ -9,4 +9,5 @@ class AppColor {
   static const Color textFormFieldBorderColor = Color(0xffD8DADC);
   static const Color containerColor = Color(0xffF9F9F9);
   static const Color greenColor = Color(0xff00AA5B);
+  static const Color containerBackGroundColor = Color(0xffF4F4F4);
 }

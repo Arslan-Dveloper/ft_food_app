@@ -5,7 +5,6 @@ import 'package:ft_food_app/restaurant_detail/main_screen_restaurant.dart';
 import 'package:ft_food_app/views/screens/onboarding_screen.dart';
 import 'package:get/get.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -24,6 +23,16 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ButtonStyle(
+                animationDuration: Duration(milliseconds: 300),
+                elevation: WidgetStatePropertyAll(6.0),
+                backgroundColor: WidgetStatePropertyAll(AppColor.redColor),
+                overlayColor: WidgetStatePropertyAll(
+                  Colors.white.withOpacity(0.2),
+                ),
+              ),
+            ),
             fontFamily: 'poppins',
             inputDecorationTheme: InputDecorationTheme(
               border: OutlineInputBorder(
