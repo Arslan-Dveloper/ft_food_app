@@ -56,6 +56,62 @@ class ScreenHomePage extends StatelessWidget {
     Rx<Map<String, dynamic>> selectedData = Rx(data[0]);
     return Obx(() {
       return Scaffold(
+        appBar: selectedData.value["title"] == "Home"
+            ? AppBar(
+          automaticallyImplyLeading: false,
+          leading: Builder(
+            builder: (context) {
+              return GestureDetector(
+                onTap: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(left: 16),
+                  child: Image.asset(
+                    "assets/images/menu.png",
+                    scale: 5,
+                  ),
+                ),
+              );
+            },
+          ),
+          title: Text(
+            'FOODIT',
+            style: GoogleFonts.poppins().copyWith(
+              fontWeight: FontWeight.w600,
+              fontSize: 25.sp,
+              fontFamily: "poppins",
+            ),
+          ),
+          centerTitle: true,
+          actions: [
+            GestureDetector(
+              onTap: () {
+                Get.to(ScreenConversation());
+              },
+              child: Image.asset(
+                "assets/images/message ft.png",
+                scale: 4.5,
+              ),
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            GestureDetector(
+              onTap: () {
+                Get.to(ScreenNotification());
+              },
+              child: Image.asset(
+                "assets/images/bell icon.png",
+                scale: 4.5,
+              ),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+          ],
+        )
+            : null,
         drawer: Drawer(
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
@@ -304,62 +360,7 @@ class ScreenHomePage extends StatelessWidget {
             ),
           ),
         ),
-        appBar: selectedData.value["title"] == "Home"
-            ? AppBar(
-                automaticallyImplyLeading: false,
-                leading: Builder(
-                  builder: (context) {
-                    return GestureDetector(
-                      onTap: () {
-                        Scaffold.of(context).openDrawer();
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 16),
-                        child: Image.asset(
-                          "assets/images/menu.png",
-                          scale: 5,
-                        ),
-                      ),
-                    );
-                  },
-                ),
-                title: Text(
-                  'FOODIT',
-                  style: GoogleFonts.poppins().copyWith(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 25.sp,
-                    fontFamily: "poppins",
-                  ),
-                ),
-                centerTitle: true,
-                actions: [
-                  GestureDetector(
-                    onTap: () {
-                      Get.to(ScreenConversation());
-                    },
-                    child: Image.asset(
-                      "assets/images/message ft.png",
-                      scale: 4.5,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Get.to(ScreenNotification());
-                    },
-                    child: Image.asset(
-                      "assets/images/bell icon.png",
-                      scale: 4.5,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                ],
-              )
-            : null,
+
         body: Obx(
           () {
             return selectedData.value["layout"] as Widget;

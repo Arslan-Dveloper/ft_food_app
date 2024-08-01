@@ -5,6 +5,8 @@ import 'package:ft_food_app/custom_widget/my_custom_text.dart';
 import 'package:ft_food_app/extention/padding_extention.dart';
 import 'package:ft_food_app/helper/constant.dart';
 import 'package:ft_food_app/views/screens/screen_confirm_order.dart';
+import 'package:ft_food_app/views/screens/screen_confirm_order_home.dart';
+import 'package:ft_food_app/views/screens/screen_setting.dart';
 import 'package:get/get.dart';
 
 class ScreenServicesMethod extends StatelessWidget {
@@ -50,7 +52,9 @@ class ScreenServicesMethod extends StatelessWidget {
               return GestureDetector(
                 onTap: () {
                   selectedText.value = e;
-                  Get.to(ScreenConfirmOrder());
+                  selectedText.value["title"] == "Take Away"
+                      ? Get.to(ScreenConfirmOrder())
+                      : Get.to(ScreenConfirmOrderHome());
                 },
                 child: Container(
                   margin: EdgeInsets.only(top: 20),
@@ -100,7 +104,6 @@ class ScreenServicesMethod extends StatelessWidget {
             },
           ).toList(),
         ).symmetricPadding(horizontal: 20),
-
       ),
     );
   }
