@@ -10,4 +10,8 @@ class AppColor {
   static const Color containerColor = Color(0xffF9F9F9);
   static const Color greenColor = Color(0xff00AA5B);
   static const Color containerBackGroundColor = Color(0xffF4F4F4);
+  static const Color reviewTextColor = Color(0xff8E8E93);
+  static const Color containerBorder = Color(0xffE9E9E9);
+  static const Color yellowColor = Color(0xffFFBB1B);
+
 }

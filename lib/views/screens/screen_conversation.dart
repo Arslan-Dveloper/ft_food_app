@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ft_food_app/controller/app_controller.dart';
 import 'package:ft_food_app/helper/constant.dart';
 import 'package:get/get.dart';
 
 import 'chat_with_restaurant.dart';
 
-class ConversationScreen extends StatelessWidget {
-  const ConversationScreen({Key? key}) : super(key: key);
+class ScreenConversation extends StatelessWidget {
+  const ScreenConversation({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +38,9 @@ class ConversationScreen extends StatelessWidget {
                   hintText: "Search",
                   hintStyle: TextStyle(
                     fontSize: 14,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w400,color: AppColor.subHeadingTextColor
                   ),
+                  prefixIcon: Icon(Icons.search,color: AppColor.subHeadingTextColor,)
                 ),
               ),
             ),
@@ -61,7 +63,7 @@ class ConversationScreen extends StatelessWidget {
                         style: TextStyle(
                             fontFamily: 'poppins',
                             fontWeight: FontWeight.w500,
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             color: AppColor.textColor),
                       ),
                       subtitle: Text(
@@ -69,11 +71,12 @@ class ConversationScreen extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'poppins',
                           fontWeight: FontWeight.w400,
-                          fontSize: 12,
+                          fontSize: 12.sp,
                           color: AppColor.subHeadingTextColor,
                         ),
                       ),
                       trailing: Column(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
                             "${controller.conversationText[index]}",
@@ -85,25 +88,25 @@ class ConversationScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(height: 10,),
-                          Container(
-                            width: 22,
-                            height: 22,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(22),
-                              color: AppColor.redColor.withOpacity(0.05)
-                            ),
-                            child: Center(
-                              child: Text(
-                                "1",
-                                style: TextStyle(
-                                  fontFamily: 'poppins',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 12,
-                                  color: AppColor.subHeadingTextColor,
-                                ),
-                              ),
-                            ),
-                          ),
+                          // Container(
+                          //   width: 22,
+                          //   height: 22,
+                          //   decoration: BoxDecoration(
+                          //     borderRadius: BorderRadius.circular(22),
+                          //     color: AppColor.redColor.withOpacity(0.05)
+                          //   ),
+                          //   child: Center(
+                          //     child: Text(
+                          //       "1",
+                          //       style: TextStyle(
+                          //         fontFamily: 'poppins',
+                          //         fontWeight: FontWeight.w400,
+                          //         fontSize: 12,
+                          //         color: AppColor.subHeadingTextColor,
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),

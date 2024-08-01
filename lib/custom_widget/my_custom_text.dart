@@ -6,13 +6,17 @@ class MyText extends StatelessWidget {
   String? text;
   FontWeight? fontweightText;
   double? fontSizeText;
-  Color?textColor;
+  Color? textColor;
+  TextAlign? textAlignText;
+  String? fontFaimlyText;
 
   MyText({
     required this.text,
     this.fontSizeText,
     this.fontweightText,
     this.textColor,
+    this.textAlignText,
+    this.fontFaimlyText,
   });
 
   @override
@@ -21,10 +25,11 @@ class MyText extends StatelessWidget {
       "$text",
       style: TextStyle(
         fontWeight: fontweightText ?? FontWeight.w500,
-        fontFamily: 'poppins',
-        color: textColor??AppColor.textColor,
+        fontFamily: fontFaimlyText ?? 'poppins',
+        color: textColor ?? AppColor.textColor,
         fontSize: fontSizeText ?? 23,
       ),
+      textAlign: textAlignText,
     );
   }
 }

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:ft_food_app/custom_widget/my_custom_text.dart';
 import 'package:ft_food_app/helper/constant.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../views/screens/reservation_screen.dart';
+import '../controller/reservation_controller.dart';
+import '../views/layouts/item_menu_two.dart';
+import '../views/layouts/item_review.dart';
+import '../views/screens/screen_reservation.dart';
 
 class MainScreenRestaurant extends StatelessWidget {
   const MainScreenRestaurant({Key? key}) : super(key: key);
@@ -31,11 +36,11 @@ class MainScreenRestaurant extends StatelessWidget {
       "Chinese Bowl",
     ];
 
-    var listTextSub = [
-      "Special Bowl",
-      "Italian Platter",
-      "Vege Salad",
-      "Chinese Bowl",
+    var listPrice = [
+      "€190.50 ",
+      "€200.00",
+      "€120.00",
+      "€230.50",
     ];
 
     var selectedText = [
@@ -45,6 +50,7 @@ class MainScreenRestaurant extends StatelessWidget {
     ];
 
     var selectedOne = selectedText.first.obs;
+    var controller = Get.put(ReservationController());
 
     return DefaultTabController(
       length: 4,
@@ -67,15 +73,20 @@ class MainScreenRestaurant extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 20),
-                      child: Container(
-                        width: 50,
-                        height: 32,
-                        decoration: BoxDecoration(
-                            color: AppColor.whiteColor.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Icon(
-                          Icons.arrow_back,
-                          color: AppColor.whiteColor,
+                      child: GestureDetector(
+                        onTap: (){
+                          Get.back();
+                        },
+                        child: Container(
+                          width: 50,
+                          height: 32,
+                          decoration: BoxDecoration(
+                              color: AppColor.whiteColor.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: AppColor.whiteColor,
+                          ),
                         ),
                       ),
                     ),
@@ -129,8 +140,8 @@ class MainScreenRestaurant extends StatelessWidget {
                               "Fine Dining",
                               style: TextStyle(
                                 fontFamily: 'poppins',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w700,
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w500,
                                 color: AppColor.textColor,
                               ),
                             ),
@@ -153,8 +164,8 @@ class MainScreenRestaurant extends StatelessWidget {
                               "456 Oak Avenue, State 12345",
                               style: TextStyle(
                                   fontFamily: 'poppins',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w500,
                                   color: AppColor.textColor.withOpacity(0.5)),
                             ),
                           ],
@@ -176,8 +187,8 @@ class MainScreenRestaurant extends StatelessWidget {
                               "+39 02 1234567",
                               style: TextStyle(
                                   fontFamily: 'poppins',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w500,
                                   color: AppColor.textColor.withOpacity(0.5)),
                             ),
                           ],
@@ -199,25 +210,23 @@ class MainScreenRestaurant extends StatelessWidget {
                               "520",
                               style: TextStyle(
                                   fontFamily: 'poppins',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w500,
                                   color: AppColor.textColor.withOpacity(0.5)),
                             ),
                           ],
                         ),
                       ],
                     ),
-                    SizedBox(
-                      width: 2,
-                    ),
+                    Spacer(),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Row(
                           children: [
                             Container(
-                              width: 25,
-                              height: 25,
+                              width: 20,
+                              height: 20,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                 image: AssetImage("assets/images/star.png"),
@@ -268,6 +277,9 @@ class MainScreenRestaurant extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(
+                height: 12,
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 child: RichText(
@@ -277,17 +289,20 @@ class MainScreenRestaurant extends StatelessWidget {
                           "Welcome to Fine Dining: a cozy spot in the heart of the city. We serve tasty dishes from around the world.",
                       style: TextStyle(
                           fontFamily: 'poppins',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w400,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w500,
                           color: AppColor.blackColor)),
                   TextSpan(
                       text: "Read More",
                       style: TextStyle(
                           fontFamily: 'poppins',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w400,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w500,
                           color: AppColor.redColor))
                 ])),
+              ),
+              SizedBox(
+                height: 17,
               ),
               TabBar(
                   labelColor: AppColor.redColor,
@@ -305,7 +320,7 @@ class MainScreenRestaurant extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Get.to(ReservationScreen());
+                        Get.to(ScreenReservation());
                       },
                       child: Container(
                         child: Column(
@@ -331,52 +346,26 @@ class MainScreenRestaurant extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(
-                      child: GridView.builder(
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                        itemCount: listImages.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                        ),
-                        itemBuilder: (context, index) {
-                          return Container(
-                            padding: EdgeInsets.only(left: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Image.asset(listImages[index].toString()),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  listTextMain[index].toString(),
-                                  style: TextStyle(
-                                    fontFamily: 'poppins',
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Image.asset(
-                                  "assets/images/stars.png",
-                                  scale: 5,
-                                ),
-                                Text(
-                                  listTextMain[index].toString(),
-                                  style: TextStyle(
-                                    fontFamily: 'poppins',
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-                        },
+                    GridView.builder(
+                      padding: EdgeInsets.only(left: 5, right: 10, top: 20),
+                      itemCount: listImages.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        mainAxisExtent: 230,
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 5,
+                        mainAxisSpacing: 0,
+                        childAspectRatio: 1,
                       ),
+                      itemBuilder: (context, index) {
+                        return ItemMenuTwo(
+                          index: index,
+                          controller: controller,
+                        );
+                      },
                     ),
                     Container(
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        padding: EdgeInsets.symmetric(horizontal: 15),
                         child: Column(
                           children: [
                             Row(
@@ -385,7 +374,7 @@ class MainScreenRestaurant extends StatelessWidget {
                                   text: TextSpan(
                                     style: TextStyle(
                                         fontFamily: 'poppins',
-                                        fontWeight: FontWeight.w800,
+                                        fontWeight: FontWeight.w500,
                                         fontSize: 20,
                                         color: Colors.black),
                                     children: [
@@ -394,8 +383,8 @@ class MainScreenRestaurant extends StatelessWidget {
                                           text: "(13)",
                                           style: TextStyle(
                                               fontFamily: 'poppins',
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 15,
                                               color:
                                                   AppColor.subHeadingTextColor))
                                     ],
@@ -422,6 +411,17 @@ class MainScreenRestaurant extends StatelessWidget {
                                 }),
                               ],
                             ),
+                            Expanded(
+                              child: ListView.builder(
+                                itemCount: 3,
+                                itemBuilder: (context, index) {
+                                  return ItemReview(
+                                    controller: controller,
+                                    index: index,
+                                  );
+                                },
+                              ),
+                            )
                           ],
                         ),
                       ),

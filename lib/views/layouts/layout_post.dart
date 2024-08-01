@@ -37,7 +37,7 @@ class LayoutPost extends StatelessWidget {
                 child: TabBar(
                   labelStyle: TextStyle(
                     fontFamily: 'poppins',
-                    fontSize: 12.sp,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w500,
                   ),
                   unselectedLabelColor: AppColor.blackColor,
@@ -59,12 +59,8 @@ class LayoutPost extends StatelessWidget {
               Expanded(
                 child: TabBarView(
                   children: [
-                  LayoutPostNearMe(),
-                    Container(
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(color: Colors.brown),
-                    )
+                    LayoutPostNearMe(),
+                    LayoutPostNearMe(),
                   ],
                 ),
               )

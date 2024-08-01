@@ -20,8 +20,8 @@ class LayoutProfile extends StatelessWidget {
           "Profile",
           style: TextStyle(
             fontFamily: 'poppins',
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w700,
+            fontSize: 23.sp,
+            fontWeight: FontWeight.w500,
           ),
         ),
         centerTitle: true,
@@ -55,8 +55,8 @@ class LayoutProfile extends StatelessWidget {
                   "Name",
                   style: TextStyle(
                     fontFamily: 'inter',
-                    fontWeight: FontWeight.w700,
-                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.sp,
                   ),
                 ),
                 SizedBox(height: 10,),
@@ -66,7 +66,7 @@ class LayoutProfile extends StatelessWidget {
                     hintStyle: TextStyle(
                         fontFamily: 'poppins',
                         fontWeight: FontWeight.w400,
-                        fontSize: 10.sp,
+                        fontSize: 14.sp,
                         color: AppColor.textColor.withOpacity(0.7)),
                     suffixIcon: Image.asset(
                       "assets/images/Pen.png",
@@ -79,8 +79,8 @@ class LayoutProfile extends StatelessWidget {
                   "Email ID",
                   style: TextStyle(
                     fontFamily: 'inter',
-                    fontWeight: FontWeight.w700,
-                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.sp,
                   ),
                 ),
                 SizedBox(height: 10,),
@@ -90,7 +90,7 @@ class LayoutProfile extends StatelessWidget {
                     hintStyle: TextStyle(
                         fontFamily: 'poppins',
                         fontWeight: FontWeight.w400,
-                        fontSize: 10.sp,
+                        fontSize: 14.sp,
                         color: AppColor.textColor.withOpacity(0.7)),
                     suffixIcon: Image.asset(
                       "assets/images/Pen.png",
@@ -103,8 +103,8 @@ class LayoutProfile extends StatelessWidget {
                   "Phone no.",
                   style: TextStyle(
                     fontFamily: 'inter',
-                    fontWeight: FontWeight.w700,
-                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.sp,
                   ),
                 ),
                 SizedBox(height: 10,),
@@ -113,8 +113,8 @@ class LayoutProfile extends StatelessWidget {
                     hintText: "+39 01234567",
                     hintStyle: TextStyle(
                         fontFamily: 'poppins',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16.sp,
                         color: AppColor.textColor.withOpacity(0.7)),
                     suffixIcon: Image.asset(
                       "assets/images/Pen.png",

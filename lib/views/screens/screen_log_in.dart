@@ -2,13 +2,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ft_food_app/controller/app_controller.dart';
 import 'package:ft_food_app/helper/constant.dart';
-import 'package:ft_food_app/views/screens/signup_screen.dart';
+import 'package:ft_food_app/views/screens/screen_signup.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LogInScreen extends StatelessWidget {
-  const LogInScreen({Key? key}) : super(key: key);
+class ScreenLogIn extends StatelessWidget {
+  const ScreenLogIn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class LogInScreen extends StatelessWidget {
                       },
                       child: Image.asset(
                         "assets/images/arrow back.png",
-                        scale: 4,
+                        scale: 5,
                       ),
                     ),
                     SizedBox(
@@ -50,9 +50,10 @@ class LogInScreen extends StatelessWidget {
                     Text(
                       "Log in",
                       style: GoogleFonts.poppins().copyWith(
-                        fontSize: 24.sp,
+                        fontSize: 35.sp,
                         fontWeight: FontWeight.w600,
                         color: AppColor.textColor,
+                        fontFamily: "poppins"
                       ),
                     ),
                     SizedBox(
@@ -61,9 +62,9 @@ class LogInScreen extends StatelessWidget {
                     Text(
                       "Email address",
                       style: GoogleFonts.poppins().copyWith(
-                          fontSize: 10.sp,
+                          fontSize: 14.sp,
                           color: AppColor.textColor,
-                          fontWeight: FontWeight.w600),
+                          fontWeight: FontWeight.w400),
                     ),
                     SizedBox(
                       height: 6,
@@ -73,7 +74,7 @@ class LogInScreen extends StatelessWidget {
                         hintText: "atiqabdullah@foodit.com",
                         hintStyle: TextStyle(
                           fontFamily: 'poppins',
-                          fontSize: 10.sp,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
                           color: AppColor.textColor,
                         ),
@@ -102,9 +103,9 @@ class LogInScreen extends StatelessWidget {
                     Text(
                       "Password",
                       style: GoogleFonts.poppins().copyWith(
-                          fontSize: 10.sp,
+                          fontSize: 14.sp,
                           color: AppColor.textColor,
-                          fontWeight: FontWeight.w600),
+                          fontWeight: FontWeight.w400),
                     ),
                     SizedBox(
                       height: 6,
@@ -116,7 +117,7 @@ class LogInScreen extends StatelessWidget {
                           hintText: "************",
                           hintStyle: TextStyle(
                             fontFamily: 'poppins',
-                            fontSize: 10.sp,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                             color: AppColor.textColor,
                           ),
@@ -128,11 +129,11 @@ class LogInScreen extends StatelessWidget {
                             child: controller.isTrue.value
                                 ? Image.asset(
                                     "assets/images/hidden eye.png",
-                                    scale: 3,
+                                    scale: 4,
                                   )
                                 : Image.asset(
                                     "assets/images/unhidden eye.png",
-                                    scale: 3,
+                                    scale: 4,
                                   ),
                           ),
                         ),
@@ -146,9 +147,9 @@ class LogInScreen extends StatelessWidget {
                       child: Text(
                         "Forgot password?",
                         style: GoogleFonts.poppins().copyWith(
-                            fontSize: 10.sp,
+                            fontSize: 14.sp,
                             color: AppColor.textColor,
-                            fontWeight: FontWeight.w600),
+                            fontWeight: FontWeight.w400),
                       ),
                     ),
                     SizedBox(
@@ -164,13 +165,13 @@ class LogInScreen extends StatelessWidget {
                               overlayColor: AppColor.whiteColor,
                             ),
                             onPressed: () {
-                              Get.to(SignupScreen());
+                              Get.to(ScreenSignUp());
                             },
                             child: Text(
                               'Log In',
                               style: GoogleFonts.poppins().copyWith(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w600,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w400,
                                 color: AppColor.whiteColor,
                               ),
                             )),
@@ -187,20 +188,20 @@ class LogInScreen extends StatelessWidget {
                               text: "Don’t have an account?",
                               style: TextStyle(
                                 fontFamily: 'poppins',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w400,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w600,
                                 color: AppColor.textColor,
                               ),
                             ),
                             TextSpan(
                               recognizer: TapGestureRecognizer()..onTap = () {
-                                Get.to(SignupScreen());
+                                Get.to(ScreenSignUp());
                               },
                               text: " Sign up",
                               style: TextStyle(
                                   fontFamily: 'poppins',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
                                   color: AppColor.redColor),
                             )
                           ],

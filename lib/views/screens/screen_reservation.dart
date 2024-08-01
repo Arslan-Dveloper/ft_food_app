@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ft_food_app/helper/constant.dart';
+import 'package:ft_food_app/views/layouts/item_menu.dart';
+import 'package:ft_food_app/views/screens/screen_confirm_reservation.dart';
 import 'package:ft_food_app/views/screens/screen_select_menu.dart';
 import 'package:get/get.dart';
 
 import '../../controller/reservation_controller.dart';
 import '../../custom_widget/my_custom_text.dart';
 
-class ReservationScreen extends StatelessWidget {
-  const ReservationScreen({Key? key}) : super(key: key);
+class ScreenReservation extends StatelessWidget {
+  const ScreenReservation({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class ReservationScreen extends StatelessWidget {
     controller.selectedItem.value = controller.numbersSelection[0];
 
     var data = [
-      {"day": "today", "date": "12"},
+      {"day": "Today", "date": "12"},
       {"day": "Tue", "date": "13"},
       {"day": "Wed", "date": "14"},
       {"day": "Thu", "date": "15"},
@@ -222,32 +224,48 @@ class ReservationScreen extends StatelessWidget {
                     ),
                   );
                 }),
-                MyText(
-                  text: "In a Rush",
-                  fontSizeText: 20,
-                  fontweightText: FontWeight.w500,
-                ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    width: 162,
-                    height: 135,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      border: Border.all(
-                        color: AppColor.subHeadingTextColor.withOpacity(0.3),
-                      ),
-                    ),
-                    child: Center(
-                      child: MyText(
-                        text: "Select Menu",
-                        fontweightText: FontWeight.w400,
-                        fontSizeText: 14,
-                        textColor: AppColor.textColor.withOpacity(0.8),
-                      ),
-                    ),
-                  ),
-                ),
+                Obx(() {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      controller.switchValue.value
+                          ? MyText(
+                              text: "In a Rush",
+                              fontSizeText: 20,
+                              fontweightText: FontWeight.w500,
+                            )
+                          : Text(""),
+                      controller.switchValue.value
+                          ? GestureDetector(
+                              onTap: () async {
+                                var result = await Get.to(ScreenSelectMenu());
+                                if (result != null) {}
+                              },
+                              child: Container(
+                                width: 162,
+                                height: 135,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  border: Border.all(
+                                    color: AppColor.subHeadingTextColor
+                                        .withOpacity(0.3),
+                                  ),
+                                ),
+                                child: Center(
+                                  child: MyText(
+                                    text: "Select Menu",
+                                    fontweightText: FontWeight.w400,
+                                    fontSizeText: 14,
+                                    textColor:
+                                        AppColor.textColor.withOpacity(0.8),
+                                  ),
+                                ),
+                              ),
+                            )
+                          : Container(),
+                    ],
+                  );
+                }),
                 SizedBox(
                   height: 24,
                 ),
@@ -276,7 +294,7 @@ class ReservationScreen extends StatelessWidget {
                     child: ElevatedButton(
                       style: ButtonStyle(),
                       onPressed: () {
-                        Get.to(ScreenSelectMenu());
+                        Get.to(ScreenConfirmReservation());
                       },
                       child: Text(
                         "Book Now",

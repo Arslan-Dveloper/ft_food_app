@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ft_food_app/helper/constant.dart';
 import 'package:ft_food_app/restaurant_detail/main_screen_restaurant.dart';
-import 'package:ft_food_app/views/screens/onboarding_screen.dart';
+import 'package:ft_food_app/views/screens/screen_onboarding.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -12,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -53,8 +52,8 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-          //home: OnboardingScreen(),
-          home: MainScreenRestaurant(),
+          home: ScreenOnboarding(),
+          //home: MainScreenRestaurant(),
         );
       },
     );

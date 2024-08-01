@@ -7,10 +7,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'screen_home_page.dart';
-import 'log_in_screen.dart';
+import 'screen_log_in.dart';
 
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({Key? key}) : super(key: key);
+class ScreenSignUp extends StatelessWidget {
+  const ScreenSignUp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class SignupScreen extends StatelessWidget {
                   },
                   child: Image.asset(
                     "assets/images/arrow back.png",
-                    scale: 4,
+                    scale: 5,
                   ),
                 ),
                 SizedBox(
@@ -44,7 +44,7 @@ class SignupScreen extends StatelessWidget {
                 Text(
                   "Sign Up",
                   style: GoogleFonts.poppins().copyWith(
-                    fontSize: 24.sp,
+                    fontSize: 33.sp,
                     fontWeight: FontWeight.w600,
                     color: AppColor.textColor,
                   ),
@@ -55,9 +55,9 @@ class SignupScreen extends StatelessWidget {
                 Text(
                   "Name",
                   style: GoogleFonts.poppins().copyWith(
-                      fontSize: 10.sp,
+                      fontSize: 14.sp,
                       color: AppColor.textColor,
-                      fontWeight: FontWeight.w600),
+                      fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
                   height: 6,
@@ -67,7 +67,7 @@ class SignupScreen extends StatelessWidget {
                     hintText: "Jhon Doe",
                     hintStyle: TextStyle(
                       fontFamily: 'poppins',
-                      fontSize: 11.sp,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w400,
                       color: AppColor.subHeadingTextColor,
                     ),
@@ -79,9 +79,9 @@ class SignupScreen extends StatelessWidget {
                 Text(
                   "Email",
                   style: GoogleFonts.poppins().copyWith(
-                      fontSize: 10.sp,
+                      fontSize: 14.sp,
                       color: AppColor.textColor,
-                      fontWeight: FontWeight.w600),
+                      fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
                   height: 6,
@@ -91,7 +91,7 @@ class SignupScreen extends StatelessWidget {
                     hintText: "example@foodit.com",
                     hintStyle: TextStyle(
                       fontFamily: 'poppins',
-                      fontSize: 11.sp,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w400,
                       color: AppColor.subHeadingTextColor,
                     ),
@@ -103,9 +103,9 @@ class SignupScreen extends StatelessWidget {
                 Text(
                   "Create a password",
                   style: GoogleFonts.poppins().copyWith(
-                      fontSize: 10.sp,
+                      fontSize: 14.sp,
                       color: AppColor.textColor,
-                      fontWeight: FontWeight.w600),
+                      fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
                   height: 6,
@@ -117,7 +117,7 @@ class SignupScreen extends StatelessWidget {
                       hintText: "Must be 8 characters",
                       hintStyle: TextStyle(
                         fontFamily: 'poppins',
-                        fontSize: 10.sp,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColor.subHeadingTextColor,
                       ),
@@ -129,11 +129,11 @@ class SignupScreen extends StatelessWidget {
                         child: controller.isTrueSignUp.value
                             ? Image.asset(
                                 "assets/images/unhidden eye.png",
-                                scale: 3,
+                                scale: 4,
                               )
                             : Image.asset(
                                 "assets/images/hidden eye.png",
-                                scale: 3,
+                                scale: 4,
                               ),
                       ),
                     ),
@@ -145,9 +145,9 @@ class SignupScreen extends StatelessWidget {
                 Text(
                   "Confirm Password",
                   style: GoogleFonts.poppins().copyWith(
-                      fontSize: 10.sp,
+                      fontSize: 14.sp,
                       color: AppColor.textColor,
-                      fontWeight: FontWeight.w600),
+                      fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
                   height: 6,
@@ -159,7 +159,7 @@ class SignupScreen extends StatelessWidget {
                       hintText: "Repeat password",
                       hintStyle: TextStyle(
                         fontFamily: 'poppins',
-                        fontSize: 10.sp,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColor.subHeadingTextColor,
                       ),
@@ -171,11 +171,11 @@ class SignupScreen extends StatelessWidget {
                         child: controller.isTrueSignUpConfirm.value
                             ? Image.asset(
                                 "assets/images/hidden eye.png",
-                                scale: 3,
+                                scale: 4,
                               )
                             : Image.asset(
                                 "assets/images/unhidden eye.png",
-                                scale: 3,
+                                scale: 4,
                               ),
                       ),
                     ),
@@ -199,8 +199,8 @@ class SignupScreen extends StatelessWidget {
                         child: Text(
                           'Sign Up',
                           style: GoogleFonts.poppins().copyWith(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w500,
                             color: AppColor.whiteColor,
                           ),
                         )),
@@ -217,7 +217,7 @@ class SignupScreen extends StatelessWidget {
                           text: "Already have an Account?",
                           style: TextStyle(
                             fontFamily: 'poppins',
-                            fontSize: 12.sp,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                             color: AppColor.textColor,
                           ),
@@ -225,13 +225,13 @@ class SignupScreen extends StatelessWidget {
                         TextSpan(
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              Get.to(LogInScreen());
+                              Get.to(ScreenLogIn());
                             },
                           text: " Log In",
                           style: TextStyle(
                               fontFamily: 'poppins',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w700,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w400,
                               color: AppColor.redColor),
                         )
                       ],

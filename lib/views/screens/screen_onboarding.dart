@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ft_food_app/controller/app_controller.dart';
 import 'package:ft_food_app/helper/constant.dart';
-import 'package:ft_food_app/views/screens/select_categorey_screen.dart';
+import 'package:ft_food_app/views/screens/screen_select_catagory.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class OnboardingScreen extends StatelessWidget {
-  const OnboardingScreen({Key? key}) : super(key: key);
+class ScreenOnboarding extends StatelessWidget {
+  const ScreenOnboarding({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class OnboardingScreen extends StatelessWidget {
                     Text(
                       controller.mainText[index],
                       style: GoogleFonts.poppins().copyWith(
-                        fontSize: 18.sp,
+                        fontSize: 25.sp,
                         fontWeight: FontWeight.w600,
                         color: AppColor.textColor,
                       ),
@@ -63,8 +63,8 @@ class OnboardingScreen extends StatelessWidget {
                       child: Text(
                         controller.subHeadingText[index],
                         style: GoogleFonts.poppins().copyWith(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
                           color: AppColor.subHeadingTextColor,
                         ),
                         textAlign: TextAlign.center,
@@ -90,7 +90,7 @@ class OnboardingScreen extends StatelessWidget {
                       onPressed: () {
                         controller.selectedNumber.value ==
                                 controller.images.length - 1
-                            ? Get.to(SelectCategoreyScreen())
+                            ? Get.to(ScreenSelectCategorey())
                             : controller.pageController.nextPage(
                                 duration: Duration(milliseconds: 100),
                                 curve: Curves.bounceIn);
@@ -100,11 +100,11 @@ class OnboardingScreen extends StatelessWidget {
                         height: 50,
                         child: Center(
                           child: Text(
-                            'Continuous',
+                            'Continue',
                             style: TextStyle(
                               fontFamily: 'poppins',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
                               color: AppColor.whiteColor,
                             ),
                           ),
@@ -123,7 +123,7 @@ class OnboardingScreen extends StatelessWidget {
                     Obx(() {
                       return GestureDetector(
                         onTap: () {
-                          Get.to(SelectCategoreyScreen());
+                          Get.to(ScreenSelectCategorey());
                         },
                         child: controller.selectedNumber.value ==
                                 controller.images.length - 1
@@ -131,7 +131,8 @@ class OnboardingScreen extends StatelessWidget {
                             : Text(
                                 'Skip',
                                 style: TextStyle(
-                                    fontSize: 12.sp,
+                                  fontFamily: "poppins",
+                                    fontSize: 16.sp,
                                     fontWeight: FontWeight.w500,
                                     color: AppColor.redColor),
                               ),
@@ -150,7 +151,7 @@ class OnboardingScreen extends StatelessWidget {
   Widget buildIndicator(bool isSelected) {
     return Container(
       margin: EdgeInsets.only(right: 10),
-      height: isSelected ? 15 : 15,
+      height: isSelected ? 13 : 13,
       width: isSelected ? 40 : 20,
       decoration: BoxDecoration(
         color:

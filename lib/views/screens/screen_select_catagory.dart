@@ -3,10 +3,10 @@ import 'package:ft_food_app/helper/constant.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'log_in_screen.dart';
+import 'screen_log_in.dart';
 
-class SelectCategoreyScreen extends StatelessWidget {
-  const SelectCategoreyScreen({Key? key}) : super(key: key);
+class ScreenSelectCategorey extends StatelessWidget {
+  const ScreenSelectCategorey({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -128,13 +128,14 @@ class SelectCategoreyScreen extends StatelessWidget {
                         overlayColor: AppColor.whiteColor,
                       ),
                       onPressed: () {
-                        Get.to(LogInScreen());
+                        Get.to(ScreenLogIn());
                       },
                       child: Text(
                         'Continue',
                         style: GoogleFonts.poppins().copyWith(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w600,
+                          fontFamily: "poppins",
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
                           color: AppColor.whiteColor,
                         ),
                       )),

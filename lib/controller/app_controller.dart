@@ -62,10 +62,17 @@ class AppControllerApp extends GetxController {
     "assets/images/image two.png",
   ];
   var numberKL = [
-    "0.5 km away",
-    "0.7 km away",
-    "0.5 km away",
-    "0.7 km away",
+    "0.5",
+    "0.7",
+    "0.5",
+    "0.7",
+  ];
+
+  var numberKM = [
+    " km away",
+    " km away",
+    " km away",
+    " km away",
   ];
 
   var cartImages = [
@@ -113,5 +120,10 @@ class AppControllerApp extends GetxController {
     "11:20 am",
     "11:20 am",
     "Yesterday",
+  ];
+
+  var neraMeImage = [
+    "assets/images/near me image.png",
+    "assets/images/near me two.png"
   ];
 }

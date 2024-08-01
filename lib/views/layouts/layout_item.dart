@@ -111,7 +111,7 @@ int Index;
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                          "assets/images/near me image.png"),
+                          "${appController.neraMeImage[Index]}"),
                     ),
                   ),
                   width: 300,

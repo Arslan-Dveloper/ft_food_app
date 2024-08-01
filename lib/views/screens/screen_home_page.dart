@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:ft_food_app/helper/constant.dart';
+import 'package:ft_food_app/views/screens/screen_change_adrees.dart';
+import 'package:ft_food_app/views/screens/screen_my_order.dart';
+import 'package:ft_food_app/views/screens/screen_payment_method.dart';
+import 'package:ft_food_app/views/screens/screen_setting.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../layouts/home_screen.dart';
 import '../layouts/layout_booking.dart';
 import '../layouts/layout_cart.dart';
-
 import '../layouts/layout_post.dart';
 import '../layouts/layout_profile.dart';
-import 'conversation_screen.dart';
-import 'notification_screen.dart';
+import 'screen_conversation.dart';
+import 'screen_notification.dart';
 
 class ScreenHomePage extends StatelessWidget {
   const ScreenHomePage({Key? key}) : super(key: key);
@@ -74,113 +77,129 @@ class ScreenHomePage extends StatelessWidget {
                 Center(
                   child: Text(
                     "Jhons Doe",
-                    style: GoogleFonts.poppins().copyWith(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w800,
+                    style: GoogleFonts.inter().copyWith(
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 45,
+                  height: 40,
                 ),
                 Divider(),
                 SizedBox(
                   height: 20,
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 25,
-                    ),
-                    Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/images/payment.png",
+                GestureDetector(
+                  onTap: () {
+                    Get.to(ScreenPaymentMethod());
+                  },
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 25,
+                      ),
+                      Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            scale: 4,
+                            image: AssetImage(
+                              "assets/images/payment.png",
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    // Image.asset(
-                    //   "assets/images/payment.png",
-                    //   scale: 3,
-                    // ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Text(
-                      "Payment Methods",
-                      style: GoogleFonts.poppins().copyWith(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
+                      // Image.asset(
+                      //   "assets/images/payment.png",
+                      //   scale: 3,
+                      // ),
+                      SizedBox(
+                        width: 15,
                       ),
-                    )
-                  ],
+                      Text("Payment Methods",
+                          style: TextStyle(
+                              fontFamily: "inter",
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w800))
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 25,
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 25,
-                    ),
-                    Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/images/location.png",
+                GestureDetector(
+                  onTap: () {
+                    Get.to(ScreenChangeAdrees());
+                  },
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 25,
+                      ),
+                      Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            scale: 3,
+                            image: AssetImage(
+                              "assets/images/location.png",
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    // Image.asset(
-                    //   "assets/images/location.png",
-                    //   scale: 3,
-                    // ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Text(
-                      "Delivery Address",
-                      style: GoogleFonts.poppins().copyWith(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
+                      // Image.asset(
+                      //   "assets/images/location.png",
+                      //   scale: 3,
+                      // ),
+                      SizedBox(
+                        width: 15,
                       ),
-                    )
-                  ],
+                      Text(
+                        "Delivery Address",
+                        style: GoogleFonts.inter().copyWith(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 8,
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 8,
-                    ),
-                    Container(
-                      height: 65,
-                      width: 65,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(
-                              "assets/images/order.png",
-                            ),
-                            fit: BoxFit.scaleDown),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(ScreenMyOrder());
+                  },
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 8,
                       ),
-                    ),
-                    Text(
-                      "My Orders",
-                      style: GoogleFonts.poppins().copyWith(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
+                      Container(
+                        height: 65,
+                        width: 65,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                              scale: 3,
+                              image: AssetImage(
+                                "assets/images/order.png",
+                              ),
+                              fit: BoxFit.scaleDown),
+                        ),
                       ),
-                    )
-                  ],
+                      Text(
+                        "My Orders",
+                        style: GoogleFonts.inter().copyWith(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 5,
@@ -195,6 +214,7 @@ class ScreenHomePage extends StatelessWidget {
                       width: 30,
                       decoration: BoxDecoration(
                         image: DecorationImage(
+                          scale: 3,
                           image: AssetImage(
                             "assets/images/help.png",
                           ),
@@ -206,44 +226,49 @@ class ScreenHomePage extends StatelessWidget {
                     ),
                     Text(
                       "Help & Feedback",
-                      style: GoogleFonts.poppins().copyWith(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
+                      style: GoogleFonts.inter().copyWith(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w800,
                       ),
                     )
                   ],
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 140,
                 ),
                 Divider(),
                 SizedBox(
-                  height: 140,
+                  height: 20,
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 25,
-                    ),
-                    Container(
-                      width: 30,
-                      height: 30,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image:
-                                  AssetImage("assets/images/setting-01.png"))),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Text(
-                      "Settings",
-                      style: TextStyle(
-                          fontFamily: 'inter',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w700),
-                    )
-                  ],
+                GestureDetector(
+                  onTap: () {
+                    Get.to(ScreenSetting());
+                  },
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 25,
+                      ),
+                      Container(
+                        width: 30,
+                        height: 30,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/images/setting-01.png"))),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        "Settings",
+                        style: TextStyle(
+                            fontFamily: 'inter',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w700),
+                      )
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 25,
@@ -273,10 +298,7 @@ class ScreenHomePage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 20,
-                ),
-                SizedBox(
-                  height: 20,
+                  height: 50,
                 ),
               ],
             ),
@@ -304,8 +326,8 @@ class ScreenHomePage extends StatelessWidget {
                 title: Text(
                   'FOODIT',
                   style: GoogleFonts.poppins().copyWith(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 25.sp,
                     fontFamily: "poppins",
                   ),
                 ),
@@ -313,7 +335,7 @@ class ScreenHomePage extends StatelessWidget {
                 actions: [
                   GestureDetector(
                     onTap: () {
-                      Get.to(ConversationScreen());
+                      Get.to(ScreenConversation());
                     },
                     child: Image.asset(
                       "assets/images/message ft.png",
@@ -325,7 +347,7 @@ class ScreenHomePage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Get.to(NotificationScreen());
+                      Get.to(ScreenNotification());
                     },
                     child: Image.asset(
                       "assets/images/bell icon.png",
@@ -391,8 +413,8 @@ class ScreenHomePage extends StatelessWidget {
                         Text(
                           e["title"].toString(),
                           style: GoogleFonts.poppins().copyWith(
-                            fontSize: 9.sp,
-                            fontWeight: FontWeight.w700,
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
                             color: selectedData.value == e
                                 ? AppColor.redColor
                                 : AppColor.subHeadingTextColor,

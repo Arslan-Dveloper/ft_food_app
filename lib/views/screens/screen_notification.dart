@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ft_food_app/helper/constant.dart';
 import 'package:get/get.dart';
 
-class NotificationScreen extends StatelessWidget {
-  const NotificationScreen({Key? key}) : super(key: key);
+class ScreenNotification extends StatelessWidget {
+  const ScreenNotification({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
