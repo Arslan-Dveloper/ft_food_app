@@ -13,5 +13,9 @@ class AppColor {
   static const Color reviewTextColor = Color(0xff8E8E93);
   static const Color containerBorder = Color(0xffE9E9E9);
   static const Color yellowColor = Color(0xffFFBB1B);
+  static const Color bookingText = Color(0xff01042D);
+  static const Color pinkColor = Color(0xffF8EEEE);
+  static const Color purePinkColor = Color(0xffFF9B9B);
+  static const Color secondContainer = Color(0xffF8F5FE);
 
 }

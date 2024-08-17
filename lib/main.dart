@@ -57,35 +57,5 @@ class MyApp extends StatelessWidget {
         );
       },
     );
-    // return Sizer(
-    //   builder: (context, orientation, deviceType) {
-    //     return GetMaterialApp(
-    //       debugShowCheckedModeBanner: false,
-    //       theme: ThemeData(
-    //         fontFamily: 'poppins',
-    //         inputDecorationTheme: InputDecorationTheme(
-    //           border: OutlineInputBorder(
-    //               borderRadius: BorderRadius.circular(10),
-    //               borderSide: BorderSide(
-    //                 color: AppColor.textFormFieldBorderColor,
-    //               )),
-    //           focusedBorder: OutlineInputBorder(
-    //               borderRadius: BorderRadius.circular(10),
-    //               borderSide: BorderSide(
-    //                 color: AppColor.textFormFieldBorderColor,
-    //               )),
-    //           enabledBorder: OutlineInputBorder(
-    //             borderRadius: BorderRadius.circular(10),
-    //             borderSide: BorderSide(
-    //               color: AppColor.textFormFieldBorderColor,
-    //             ),
-    //           ),
-    //         ),
-    //       ),
-    //       home: OnboardingScreen(),
-    //       //home: MainScreenRestaurant(),
-    //     );
-    //   },
-    // );
   }
 }
