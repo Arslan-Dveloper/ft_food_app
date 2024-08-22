@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ft_food_app/controller_restaurant/first_controller.dart';
+import 'package:ft_food_app/views/screens/screen_select_catagory.dart';
 import 'package:ft_food_app/views_restaurant/screens/screen_sign_up_restaurant.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -180,7 +181,7 @@ class ScreenLogInRestuarant extends StatelessWidget {
                               overlayColor: AppColor.whiteColor,
                             ),
                             onPressed: () {
-                              Get.to(ScreenSignUpRestaurant());
+                              Get.to(ScreenSelectCategorey());
                             },
                             child: Text(
                               'Log In',

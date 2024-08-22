@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ft_food_app/helper/constant.dart';
+import 'package:ft_food_app/views/screens/screen_home_page.dart';
 import 'package:ft_food_app/views_restaurant/screens/screen_log_in.dart';
+import 'package:ft_food_app/views_restaurant/screens/screen_profile_one.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -72,8 +74,8 @@ class ScreenSelectCategorey extends StatelessWidget {
                         onTap: () {
                           selectedData.value = e;
                           selectedData.value['title'] == 'Restaurant'
-                              ? Get.to(ScreenLogInRestuarant())
-                              : Get.to(ScreenLogIn());
+                              ? Get.to(ScreenProfileOne())
+                              : Get.to(ScreenHomePage());
                         },
                         child: Container(
                           margin: EdgeInsets.only(bottom: 20),

@@ -1,11 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ft_food_app/firebase_options.dart';
 import 'package:ft_food_app/helper/constant.dart';
 import 'package:ft_food_app/restaurant_detail/main_screen_restaurant.dart';
 import 'package:ft_food_app/views/screens/screen_onboarding.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 

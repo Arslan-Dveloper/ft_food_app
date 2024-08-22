@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FirstController extends GetxController {
@@ -78,6 +79,4 @@ class FirstController extends GetxController {
 
   var isTrueValue = true.obs;
   var selectedIndex = 0.obs;
-
-
 }

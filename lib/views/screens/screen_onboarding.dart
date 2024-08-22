@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ft_food_app/controller/app_controller.dart';
 import 'package:ft_food_app/helper/constant.dart';
 import 'package:ft_food_app/views/screens/screen_select_catagory.dart';
+import 'package:ft_food_app/views_restaurant/screens/screen_log_in.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -90,7 +91,7 @@ class ScreenOnboarding extends StatelessWidget {
                       onPressed: () {
                         controller.selectedNumber.value ==
                                 controller.images.length - 1
-                            ? Get.to(ScreenSelectCategorey())
+                            ? Get.to(ScreenLogInRestuarant())
                             : controller.pageController.nextPage(
                                 duration: Duration(milliseconds: 100),
                                 curve: Curves.bounceIn);
@@ -123,7 +124,7 @@ class ScreenOnboarding extends StatelessWidget {
                     Obx(() {
                       return GestureDetector(
                         onTap: () {
-                          Get.to(ScreenSelectCategorey());
+                          Get.to(ScreenLogInRestuarant());
                         },
                         child: controller.selectedNumber.value ==
                                 controller.images.length - 1
